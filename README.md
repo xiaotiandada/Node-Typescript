@@ -2,7 +2,7 @@
 
 使用Node,Typescript开发模版 可以fork自己个性化定制(方便偷懒233~)
 
-## start
+## Go
 ``` bash
 npm i
 
