@@ -1,6 +1,6 @@
 # Node-Typescript
 
-Nodejs,Typescript, MongoDB and Express.js 开发 Restful CRUD API 模版.
+Nodejs,Typescript, MongoDB and Express.js create Restful CRUD API template.
 
 可以fork自己个性化定制(方便偷懒233~) 🤗🤗🤗
 
