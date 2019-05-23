@@ -4,12 +4,6 @@ Nodejs,Typescript, MongoDB and Express.js create Restful CRUD API template.
 
 可以fork自己个性化定制(方便偷懒233~) 🤗🤗🤗
 
-> use ⬇️️️️️️️️️⬇️⬇️ 因为很多开发者用的技术栈不太一样需要注意 ❗❗❗
-
-- express
-- mongoose
-- ... ...
-
 ## Go
 ``` bash
 npm i
