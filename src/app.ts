@@ -8,8 +8,6 @@ import routers from './routers/index'
 import {config} from './configs/index'
 import bluebird from 'bluebird'
 
-
-
 // Configure bodyparser to handle post requests
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -36,5 +34,6 @@ mongoose.connect(config.url, {useNewUrlParser: true})
 app.set('port', process.env.PORT || config.port)
 app.use(routers)
 
-
 app.listen(app.get('port'), () => console.log(`app listening on port ${app.get('port')}!`))
+
+export default app

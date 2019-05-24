@@ -34,4 +34,5 @@ mongoose_1.default.connect(index_2.config.url, { useNewUrlParser: true })
 app.set('port', process.env.PORT || index_2.config.port);
 app.use(index_1.default);
 app.listen(app.get('port'), () => console.log(`app listening on port ${app.get('port')}!`));
+exports.default = app;
 //# sourceMappingURL=app.js.map
