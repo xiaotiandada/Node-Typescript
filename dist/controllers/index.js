@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const index_1 = require("../models/index");
-//Create new Blog
+// Create new Blog
 exports.blogCreate = (req, res) => {
     // Request validation
     if (!req.body) {
         return res.status(400).send({
-            message: "blog content can not be empty"
+            message: "blog content can not be empty",
         });
     }
     // create blog
@@ -17,7 +17,7 @@ exports.blogCreate = (req, res) => {
         body,
         comments,
         hidden,
-        meta
+        meta,
     });
     // Save Blog in the database
     blog.save()
@@ -26,7 +26,7 @@ exports.blogCreate = (req, res) => {
     })
         .catch((err) => {
         res.status(500).send({
-            message: err.message || "Something wrong while creating the blog."
+            message: err.message || "Something wrong while creating the blog.",
         });
     });
 };
@@ -37,7 +37,7 @@ exports.blogFindAll = (req, res) => {
         res.send(data);
     }).catch((err) => {
         res.status(500).send({
-            message: err.message || "Something wrong while retrieving blog."
+            message: err.message || "Something wrong while retrieving blog.",
         });
     });
 };
@@ -47,18 +47,18 @@ exports.blogFindOne = (req, res) => {
         .then((data) => {
         if (!(data)) {
             return res.status(404).send({
-                message: "Blog not found with id " + req.params.blogId
+                message: "Blog not found with id " + req.params.blogId,
             });
         }
         res.send(data);
     }).catch((err) => {
-        if (err.kind === 'ObjectId') {
+        if (err.kind === "ObjectId") {
             return res.status(404).send({
-                message: "Blog not found with id " + req.params.blogId
+                message: "Blog not found with id " + req.params.blogId,
             });
         }
         return res.status(500).send({
-            message: "Something wrong retrieving Blog with id " + req.params.blogId
+            message: "Something wrong retrieving Blog with id " + req.params.blogId,
         });
     });
 };
@@ -67,7 +67,7 @@ exports.blogUpdate = (req, res) => {
     // Validate Request
     if (!req.body) {
         return res.status(400).send({
-            message: "Blog content can not be empty"
+            message: "Blog content can not be empty",
         });
     }
     // Find and update blog with the request body
@@ -78,23 +78,23 @@ exports.blogUpdate = (req, res) => {
         body,
         comments,
         hidden,
-        meta
+        meta,
     })
         .then((data) => {
         if (!data) {
             return res.status(404).send({
-                message: "Blog not found with id " + req.params.blogId
+                message: "Blog not found with id " + req.params.blogId,
             });
         }
         res.send(data);
     }).catch((err) => {
-        if (err.kind === 'ObjectId') {
+        if (err.kind === "ObjectId") {
             return res.status(404).send({
-                message: "Blog not found with id " + req.params.blogId
+                message: "Blog not found with id " + req.params.blogId,
             });
         }
         return res.status(500).send({
-            message: "Something wrong updating note with id " + req.params.blogId
+            message: "Something wrong updating note with id " + req.params.blogId,
         });
     });
 };
@@ -104,18 +104,18 @@ exports.blogDelete = (req, res) => {
         .then((data) => {
         if (!data) {
             return res.status(404).send({
-                message: "Blog not found with id " + req.params.blogId
+                message: "Blog not found with id " + req.params.blogId,
             });
         }
         res.send({ message: "Blog deleted successfully!" });
     }).catch((err) => {
-        if (err.kind === 'ObjectId' || err.name === 'NotFound') {
+        if (err.kind === "ObjectId" || err.name === "NotFound") {
             return res.status(404).send({
-                message: "Blog not found with id " + req.params.blogId
+                message: "Blog not found with id " + req.params.blogId,
             });
         }
         return res.status(500).send({
-            message: "Could not delete blog with id " + req.params.blogId
+            message: "Could not delete blog with id " + req.params.blogId,
         });
     });
 };

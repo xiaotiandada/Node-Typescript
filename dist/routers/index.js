@@ -14,10 +14,10 @@ const express_1 = __importDefault(require("express"));
 const routers = express_1.default();
 const blog = __importStar(require("../controllers/index"));
 // Primary app routes.
-routers.post('/blog', blog.blogCreate);
-routers.get('/blog', blog.blogFindAll);
-routers.get('/blog/:blogId', blog.blogFindOne);
-routers.put('/blog/:blogId', blog.blogUpdate);
-routers.delete('/blog/:blogId', blog.blogDelete);
+routers.post("/blog", blog.blogCreate);
+routers.get("/blog", blog.blogFindAll);
+routers.get("/blog/:blogId", blog.blogFindOne);
+routers.put("/blog/:blogId", blog.blogUpdate);
+routers.delete("/blog/:blogId", blog.blogDelete);
 exports.default = routers;
 //# sourceMappingURL=index.js.map

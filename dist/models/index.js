@@ -1,7 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose_1 = __importDefault(require("mongoose"));
+const Schema = mongoose_1.default.Schema;
 const blogSchema = new Schema({
     title: String,
     author: String,
@@ -11,8 +14,8 @@ const blogSchema = new Schema({
     hidden: Boolean,
     meta: {
         votes: Number,
-        favs: Number
-    }
+        favs: Number,
+    },
 });
-exports.Blog = mongoose.model('Blog', blogSchema);
+exports.Blog = mongoose_1.default.model("Blog", blogSchema);
 //# sourceMappingURL=index.js.map
