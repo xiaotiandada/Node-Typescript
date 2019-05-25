@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const blogSchema = new Schema({
@@ -10,8 +10,8 @@ const blogSchema = new Schema({
   hidden: Boolean,
   meta: {
     votes: Number,
-    favs:  Number
-  }
+    favs:  Number,
+  },
 });
 
-export const Blog = mongoose.model('Blog', blogSchema)
+export const Blog = mongoose.model("Blog", blogSchema);
