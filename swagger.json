@@ -1,0 +1,21 @@
+{
+	"basePath": "/",
+	"consumes": [
+		"application/json"
+	],
+	"definitions": {},
+	"info": {
+		"title": "node-typescript",
+		"version": "1.0.0",
+		"description": "yc-server",
+		"license": {
+			"name": "ISC"
+		}
+	},
+	"paths": {},
+	"produces": [
+		"application/json"
+	],
+	"swagger": "2.0",
+	"securityDefinitions": {}
+}

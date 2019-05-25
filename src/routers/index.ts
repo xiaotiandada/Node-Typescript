@@ -1,13 +1,16 @@
-import { Express } from "express";
 import express from "express";
-const routers: Express = express();
+const router = express.Router();
 import * as blog from "../controllers/index";
 
-// Primary app routes.
-routers.post("/blog", blog.blogCreate);
-routers.get("/blog", blog.blogFindAll);
-routers.get("/blog/:blogId", blog.blogFindOne);
-routers.put("/blog/:blogId", blog.blogUpdate);
-routers.delete("/blog/:blogId", blog.blogDelete);
+import swaggerUi from "swagger-ui-express";
+const swaggerDocument = require("../../swagger.json");
+router.use("/doc", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-export default routers;
+// Primary app routes.
+router.post("/blog", blog.blogCreate);
+router.get("/blog", blog.blogFindAll);
+router.get("/blog/:blogId", blog.blogFindOne);
+router.put("/blog/:blogId", blog.blogUpdate);
+router.delete("/blog/:blogId", blog.blogDelete);
+
+export default router;
